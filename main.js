@@ -4,19 +4,19 @@ window.addEventListener("load", function() {
 		var color = document.getElementById("ingresa").value;
 
 		if(color == "rojo"){
-			document.getElementsByClassName("circlea")[0].classList.toggle("bordeRojo");
-			document.getElementsByClassName("circleb")[0].classList.remove("bordeAzul");
-			document.getElementsByClassName("circlec")[0].classList.remove("bordeVerde");
+			document.getElementsByClassName("circlea")[0].classList.toggle("bordeYellow");
+			document.getElementsByClassName("circleb")[0].classList.remove("bordeYellow");
+			document.getElementsByClassName("circlec")[0].classList.remove("bordeYellow");
 		}
 		else if(color == "azul"){
-			document.getElementsByClassName("circleb")[0].classList.toggle("bordeAzul");
-			document.getElementsByClassName("circlec")[0].classList.remove("bordeVerde");
-			document.getElementsByClassName("circlea")[0].classList.remove("bordeRojo");
+			document.getElementsByClassName("circleb")[0].classList.toggle("bordeYellow");
+			document.getElementsByClassName("circlec")[0].classList.remove("bordeYellow");
+			document.getElementsByClassName("circlea")[0].classList.remove("bordeYellow");
 		}
 		else if(color == "verde"){
-			document.getElementsByClassName("circlec")[0].classList.toggle("bordeVerde");
-			document.getElementsByClassName("circlea")[0].classList.remove("bordeRojo");
-			document.getElementsByClassName("circleb")[0].classList.remove("bordeAzul");
+			document.getElementsByClassName("circlec")[0].classList.toggle("bordeYellow");
+			document.getElementsByClassName("circlea")[0].classList.remove("bordeYellow");
+			document.getElementsByClassName("circleb")[0].classList.remove("bordeYellow");
 		}
 	});
 });
@@ -24,28 +24,29 @@ window.addEventListener("load", function() {
 
 window.addEventListener("load", function() {
 	var cri = document.getElementById("cri");
+	var contador =1;
 	cri.addEventListener("click", function() {
-		var roj =document.getElementById("rojo");
-		var blu =document.getElementById("azul");
-		var verd =document.getElementById("verde");
-        
-        function bordear(){
-        	for(roj== "rojo") {
-        	document.getElementsByClassName("circlea")[0].classList.toggle("bordeRojo");
-			document.getElementsByClassName("circleb")[0].classList.remove("bordeAzul");
-			document.getElementsByClassName("circlec")[0].classList.remove("bordeVerde");
-        	}
-        		document.getElementById("ingresa").innerHTML = "rojo" ;
-        	}
-        }
+		if(contador == 1){
+			document.getElementsByClassName("col")[0].style.borderColor="blue";
+			document.getElementById("ingresa").placeholder="rojo";
+			document.getElementsByClassName("col")[1].style.borderColor="transparent";
+			document.getElementsByClassName("col")[2].style.borderColor="transparent";
 
+		} if (contador== 2) {
+            document.getElementsByClassName("col")[1].style.borderColor="blue";
+			document.getElementById("ingresa").placeholder="azul";
+			document.getElementsByClassName("col")[0].style.borderColor="transparent";
+			document.getElementsByClassName("col")[2].style.borderColor="transparent";
 
+		}if(contador ==3){
+			document.getElementsByClassName("col")[2].style.borderColor="blue";
+			document.getElementById("ingresa").placeholder="verde";
+			document.getElementsByClassName("col")[0].style.borderColor="transparent";
+			document.getElementsByClassName("col")[1].style.borderColor="transparent";
 
-		var color = document.getElementById("ingresa").onclick=
-
-
-			document.getElementById("miDiv").style.border = color;
+			contador =0;
 		}
         
-});
+    contador++;
+    });
 });
